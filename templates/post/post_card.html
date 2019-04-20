@@ -17,6 +17,26 @@
   {% endfor %} <br>
 {{ post.created }}
 
+<br>
+
+Комментарии: <br>
+  {% for comment in comments %} <br>
+    Пользователь - {{ comment.user }} <br>
+    {{ comment.text }} <br>
+    Добавлен - {{ comment.created }}
+  {% endfor%}
+
+
+<form action="" method="POST">
+  {% csrf_token %}
+  {{ form.as_p }}
+  
+  <button type="submit"> Отправить </button>
+</form>
+
+
+
+
 {% endblock content %}
 
 
