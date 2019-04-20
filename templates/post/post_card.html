@@ -1,0 +1,24 @@
+{% extends 'post/base.html' %}
+{% block desc %} {{ post.description }} {% endblock desc %}
+{% block keywords %} {{ post.keywords}} {% endblock keywords %}
+{% block title %} {{ post.title }} {% endblock title %}
+
+
+{% block content %}
+
+
+<h1> {{ post.title }} </h1>
+<p> {{ post.text }}  </p>
+{{ post.category }} <br>
+
+Автор:{{ post.user }} <br>
+Теги: {% for tag in post.tag.all %}
+  {{tag.title}}
+  {% endfor %} <br>
+{{ post.created }}
+
+{% endblock content %}
+
+
+
+

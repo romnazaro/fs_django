@@ -1,0 +1,5 @@
+{% for post in post %}
+  <h2> <a href="{% url 'post_card' pk=post.id %}"> {{ post.title }} </a></h2>
+  <p> {{ post.text_min }} </p>
+  <p> {{ post.created }} </p>
+{% endfor %}
